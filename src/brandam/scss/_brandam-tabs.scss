@@ -1,0 +1,102 @@
+/* ---------------------------------------------------------------------- 
+    TABS WITH RADIO AND CSS
+    (+): 0 js
+    (-): rather static
+---------------------------------------------------------------------- */
+
+.tabs {
+    
+    // min-width: 320px;
+    max-width: 990px;
+
+    &.tabs-no-bottom-border .tab-content {
+      border-bottom: 0;
+    }
+
+    > section {
+      // display: none;
+      visibility: hidden;
+      height: 0;
+      overflow-y: hidden;
+
+      .tab-content {
+        padding: 20px 0 10px .25em; // all for the sake of VISIBILTY HIDDEN instead of display none
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+
+    > input[type=radio] {
+      display: none;
+    }
+
+    > label {
+      display: inline-block;
+      margin: 0 0 -1px;
+      padding: 15px 25px;
+      font-weight: 600;
+      text-align: center;
+      color: #bbb;
+      border: 1px solid transparent;
+    }
+
+    > label:before {
+      font-family: fontawesome;
+      font-weight: normal;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    // label[for*='1']:before { content: '\f0ca'; }      //list-ul:   f248   // Cog          : f013
+    // label[for*='2']:before { content: '\f248'; }      //object-ungroup:   f0ca   // Briefcase    : f0b1
+    // label[for*='3']:before { content: '\f003'; }      //envelope-o:   f003   // Sliders      : f1de 
+    // label[for*='4']:before { content: '\f1a9'; }
+
+                                                        // fa-calendar  : \f073
+                                                        // fa-bell      : \f0f3
+
+    > label:hover {
+      color: #888;
+      cursor: pointer;
+    }
+
+    > input[type=radio]:checked + label {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid #D27464; //orange;
+      border-bottom: 1px solid #fff;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4,
+    #galleryView:checked ~ #galleryContent,
+    #listView:checked ~ #listContent{
+      // display: block;
+      visibility: visible;
+      height: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+    .tabs {
+        > label {
+            font-size: 0;
+        }
+        > label:before {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tabs {
+        > label {
+            padding: 15px;
+        }
+    }
+}

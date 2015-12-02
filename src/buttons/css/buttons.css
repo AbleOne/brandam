@@ -1,0 +1,107 @@
+/*csslint outline-none:false*/
+
+.pure-button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    border: 1px solid #ccc;  /*IE 6/7/8*/
+    /*border: none rgba(0, 0, 0, 0);*/  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    /*border-radius: 2px;*/
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+    background: #f3f3f3; /*rgba(0,0,0, 0.05);*/
+    color: black;
+}
+.pure-button:focus {
+    outline: 0;
+}
+
+.pure-button-active,
+.pure-button:active {
+    box-shadow: 0 0 6px rgba(0,0,0, 0.1) inset;  /* was: box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset; */
+    /*border-color: #000\9;*/
+}
+.pure-button-active:hover {
+    background: #E6E6E6;
+}
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+    /*border: none;*/
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.pure-button-hidden {
+    display: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.pure-button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+    background-color: #ca432b; /*rgb(0, 120, 231) */
+    border-color: #C03116; /* rgb(0, 120, 231) */
+    color: #fff;
+}
+
+.pure-button-primary:hover,
+.pure-button-selected:hover,
+a.pure-button-primary:hover,
+a.pure-button-selected:hover,
+.pure-button-primary:focus,
+.pure-button-selected:focus,
+a.pure-button-primary:focus,
+a.pure-button-selected:focus{
+    color: #c7dff6;
+    color: rgba(255, 255, 255, .8); 
+}
+
+/* BUTTON SIZES */
+.pure-button-large {
+    font-size: 110%;
+}
+
+.button-xsmall {
+    font-size: 70%;
+}
+
+.button-small {
+    font-size: 85%;
+}
+
+.button-large {
+    font-size: 110%;
+}
+
+.button-xlarge {
+    font-size: 125%;
+}

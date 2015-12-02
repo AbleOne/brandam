@@ -1,0 +1,13 @@
+{
+  "name": "pure",
+  "description": "Use Pure's ridiculously tiny CSS to start any web project.",
+  "version": "0.6.0-rc-1",
+  "main": "build/pure.css",
+  "devDependencies": {
+    "normalize-css": "^3.0",
+    "font-awesome": "fontawesome#~4.4.0",
+    "malihu-custom-scrollbar-plugin": "~3.1.0",
+    "slick-carousel": "~1.5.8",
+    "jquery": "~2.1.4"
+  }
+}

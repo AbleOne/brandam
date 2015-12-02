@@ -1,0 +1,603 @@
+/* ---------------------------------------------------------------------- 
+	BrandAM ITEM STYLES
+---------------------------------------------------------------------- */
+
+.brand-item {
+	
+	.header{
+		border-bottom: none;
+	}
+
+	.content {
+
+		// GENERAL
+		h2 {
+			margin: .83em 0 .3em -.06em;
+			display: inline-block;
+			text-transform: uppercase; 				// see if good
+		}
+
+		.block-separator {
+			padding: 1.2em 0;
+
+			&:first-child,
+			&.first-child {
+				padding-top: 1.5em;
+			}
+		}
+
+		.table-advanced-header {
+			padding-top: .83em;
+
+			select {
+				margin-right: -6px;
+			}
+
+			.autorefresh & {
+				margin-right: -4px;	
+			}
+		}
+		
+		table {
+
+			tr td:first-child,
+			tr td.first-child{
+				width: 25%
+			}
+		}
+
+		.pure-button {
+			.fa {
+	            margin-right: 8px;
+	            font-size: 12px;
+	            top: 0;
+	            position: relative;
+	        }
+		}
+
+		.pure-button-large {
+			margin-top: 2em;
+		}
+
+
+
+		// CONTACTS TAB
+		.contacts {
+			
+			li {
+				margin: 0.5em 0;
+
+				.fa {
+					font-size: 18px;
+					top: 1px;
+					// color: #777;
+				}
+
+				> a {
+					margin-left: 1em;
+					color: #777;
+
+					&:hover {
+						color: $link-color;
+					}
+				}
+			}
+		}
+
+
+		// DOWNLOAD LIST
+		.download-list {
+
+			> .pure-g {
+				padding-bottom: 20px;
+			}
+			
+			input[type="text"] {
+				width: 50%;
+				min-width: 100px;
+
+				margin-top: -.3em;
+				margin-left: -.6em;
+				margin-bottom: -.5em;
+
+				border-bottom-color: #fff;
+
+				&:focus {
+					border-bottom-color: $form-focus-color;
+				}
+			}
+
+			.pure-form .pure-checkbox {
+				margin: 0; //0 18px 0 0;
+				top: 4px;
+
+				input[type="checkbox"] {
+					right: 0;
+				}
+			}
+
+			// table
+			.pure-table {
+		    	margin-top: .3em;
+
+		    	tbody td {
+		    		// because IE can't handle relative paths for cursors custom images we exclude `../`
+		    		@include zoomInCursor('img/zoomin.cur');
+		    	}
+			}
+
+			.pure-table td:first-child,
+			.pure-table th:first-child, .pure-table th.first-child, .pure-table td.first-child {
+			    width: 60%;
+			}
+
+			.pure-table th:last-child,
+			.pure-table td:last-child,
+			.pure-table th.last-child,
+			.pure-table td.last-child {
+			    width: 2em;  // 3em
+			    padding-left: 0;
+			}
+			// /.table
+
+			small {
+				position: relative;
+				top: 8px;
+				margin-right: 10px;
+				text-transform: none;
+
+				span:first-child {
+					margin-right: 5px;
+				}
+			}
+
+			.download-btn {
+				margin: 15px 14px 0 0;
+			    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+			    // text-transform: uppercase;
+
+			    &:hover {
+			    	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+			    }
+
+			    &.pure-button[disabled],
+				&.pure-button-disabled,
+				&.pure-button-disabled:hover,
+				&.pure-button-disabled:focus,
+				&.pure-button-disabled:active {
+				    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+				    filter: alpha(opacity=40);
+				    -khtml-opacity: 0.40;
+				    -moz-opacity: 0.40;
+				    opacity: 0.40;
+				    cursor: not-allowed;
+				    box-shadow: none;
+				}
+
+			}
+
+			.download-preview {
+				padding-left: 1em;
+				
+				h2 {
+					padding-left: 4px;
+				}
+
+				.download-preview-container {
+					padding-top: 1em;
+				}
+
+				img[src="img/teams/gallery/preview/"] {
+					display: none;
+				}
+			}
+		}
+
+
+		// united GALLERY-DOWNLOAD
+			.gallery-download {
+		        position: relative;
+		        // margin-top: 3em;
+		        
+		        .gd-content {
+		            position: relative;
+		        }
+
+		        .gd-mode-switchers {
+		            position: absolute;
+		            right: 1em;
+		            top: 1em;
+		            z-index: 1;
+		            text-align: right;
+		        }
+
+		        
+		        // GALLERY - STATE
+		        &.gal {
+		            .gd-thead,
+		            .gd-caption,
+		            .gd-type {
+		                display: none;
+		            }
+
+		            .gd-chkbx {
+		                height: 20px;            // as height in custom checkbox
+		                position: absolute;
+	                    bottom: 27px;
+		                left: 1em;
+		                text-align: left;
+		            }
+
+		            .gd-img {
+		                width: 100%;
+		            }
+
+		            .slick-dots {
+		                // centered bullets
+		                width: auto;
+		                left: 5em;
+		                right: 5em;
+		                // bullets on right
+		                left: 50%;
+		                right: 1em;
+		                text-align: right;
+		                bottom: 1em;
+		            }
+
+		            .download-counter-btn {
+					    width: auto;
+					    position: absolute;
+					    bottom: 1em;
+					    left: 57px;
+
+					    .download-btn {
+					    	// position: absolute;
+					    	// left: 0;
+					    	// bottom: 0;
+					    	// padding-right: 56px;
+					    }
+
+					    small {
+					    	// position: absolute;
+
+						    span {
+								color: #464343 !important;
+							}
+					    } 
+
+					}
+		        }
+
+		        // LIST - STATE
+		        &.list {
+		            // > ul {
+		            //     min-height: 116px; // height of 1 preview
+		            //     position: relative;
+		            // }
+
+		            .gd-content {
+	                    .pure-g > div {
+	                        padding: 1em;
+							border-top: 1px solid #eee;
+	                        // because IE can't handle relative paths for cursors custom images we exclude `../`
+	                        @include zoomInCursor('img/zoomin.cur');
+
+	                        &.gd-img {
+	                            border: 0;
+	                            cursor: default;
+	                        }
+	                    }
+
+	                    .gd-thead > div {
+	                        font-weight: 900;
+	                        border: 0;
+	                    }
+
+	                    > ul li {
+
+	                        &:focus {
+	                            outline: 0;
+	                        }
+	                    }
+	                } 
+
+		            .gd-mode-switchers {
+		                position: static;
+		                padding: 1em;
+		            }
+
+		            // preview
+		            .gd-img {
+		                position: absolute;
+		                right: 0;
+		                top: 0;
+
+		                // visibility
+		                visibility: hidden;
+		                height: 0;
+		                overflow-y: hidden;
+		                
+		                .active > &,
+		                &.active {
+		                    visibility: visible;
+		                    height: auto;
+		                }
+		            }
+		            .active > .gd-img {
+		                visibility: visible;
+		                height: auto;
+		            }
+
+		            .download-btn {
+						margin-bottom: 15px;
+		            }
+
+		        }
+
+				// COMMON ELs
+		        small {
+					position: relative;
+					top: 8px;
+					// margin-right: 10px;
+					padding-left: 1em;
+					text-transform: none;
+					min-width: 65px;
+
+					span:first-child {
+						margin-right: 5px;
+					}
+				}
+
+				.download-btn {
+					margin: 15px 0 0 0; // 15px 14px 0 0
+				    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+				    // text-transform: uppercase;
+
+				    &:hover {
+				    	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+				    }
+
+				    &.pure-button[disabled],
+					&.pure-button-disabled,
+					&.pure-button-disabled:hover,
+					&.pure-button-disabled:focus,
+					&.pure-button-disabled:active {
+					    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+					    filter: alpha(opacity=40);
+					    -khtml-opacity: 0.70;
+					    -moz-opacity: 0.70;
+					    opacity: 0.7;
+					    cursor: not-allowed;
+					    box-shadow: none;
+					}
+
+				}
+		    }
+	    // /.united GALLERY-DOWNLOAD
+
+
+	    .brand-gallery {
+	    	&.tabs {
+	    		text-align: right;
+
+	    		> label {
+	    			padding: .563em 1em;
+    				border: 0;
+    				background: #eee;
+					position: relative;
+				    z-index: 1;
+
+					&[for="listView"] {
+						margin-right: 1em;
+					}
+
+    				.fa {
+			            color: inherit !important;
+			            margin-right: 8px;
+			            font-size: 13px;   // font-size: 14px; and uncomment next 2 lines
+			            // top: 0;
+			            // position: relative;
+			        }
+	    		}
+
+	    		input[type=radio]:checked+label {
+	    			background: #ddd;	
+	    		}
+
+	    		section {
+	    			text-align: left;
+					
+					&#listContent{
+						h2 {
+							display: none;
+						}
+
+						.download-list {
+
+							.pure-table {
+								font-size: 80%;
+							}
+							
+							.pure-form .pure-checkbox {
+								top: -4px;
+							}
+							
+							.download-preview .download-preview-container {
+							    padding-top: .6em;
+							}
+						}
+
+
+					}
+
+	    			&#galleryContent{
+						top: -3.3em;
+						position: relative;
+	    			}
+	    		}
+	    	}
+	    }
+
+
+
+	}
+	// /.content
+
+	.brand-item-box .brand-overview {
+        @media screen and (min-width: 48em) {
+            .pure-u-md-1-3 {
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+
+
+//--------------------------------
+// TEAM
+//--------------------------------    
+.team { 
+    .brand-item  .brand-item-box {
+        @media screen and (min-width: 48em) {
+            .brand-overview {
+                .pure-u-md-1-3 {
+                    padding-left: 0;
+                    padding-right: 20px;
+
+                    li {
+                         
+                        &:first-child small {
+                            padding-top: 0;
+                        }
+
+                        small {
+                            display: block;
+                            text-transform: uppercase;
+                            padding-top: 1.5em;
+                            padding-bottom: .3em;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+
+            .brand-gallery {
+                .pure-u-md-1-3 {
+                    .slick-slide {
+                        background: #fff;
+
+                        img {
+                            margin: 13px 0;
+                        }
+                    }
+                }
+
+                .pure-u-md-2-3 {
+                    .slick-slider {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+	.edit-attorney .header {
+
+		position: relative;
+
+		.pure-form {
+			margin-bottom: 1.5em;
+			margin-top: 4em; 						// DELETE IF HIDE `CREATE DATE`
+		}
+
+		.edit-attorney-name {
+			padding-right: 0;
+		}
+
+		.edit-attorney-key {
+			padding-left: 0;
+		}
+
+		input[type="text"] + label {
+			margin: 0 0 .5em;
+		}
+
+		.attorney-date {
+			padding: 0;
+			position: absolute;
+			right: 2em;
+			top: 4.3em; 							// 1em IF `CREATE DATE` to the right
+			left: 2em;
+			width: auto;
+			text-align: left;
+
+			// .date-label {
+			// 	margin-bottom: 0;
+			// }
+		}
+	}
+
+	.edit-attorney .content {
+		.calendar-links .pure-u-lg-3-4 {
+			padding-left: 0;
+
+			.pure-button {
+				word-break: break-word;
+				white-space: normal;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 650px) {
+
+	.edit-attorney .content {
+
+		.autorefresh {
+
+			.table-advanced-header .pure-button {
+				min-width: 0;
+				padding: .5em .8em;
+			}
+
+			.pure-table span {
+				word-break: break-all;
+				display: inline-block;
+			}
+		}
+
+		.calendar-links {
+			.pure-button {
+				word-break: break-all;
+			}
+		}
+
+		.cases {
+			li {
+				padding: .1em 0 .8em;
+			}
+		}
+
+		.notifications {
+			
+			select[name=notif-type] {
+				max-width: 9em;
+			}
+
+			input[type=number] {
+				display: inline-block;
+				margin-bottom: 0;
+			}
+
+			select[name=notif-time] {
+				max-width: 7.5em;
+			}
+		}
+
+	}
+}

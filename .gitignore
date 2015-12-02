@@ -1,0 +1,14 @@
+.DS_Store
+.origHtml/
+.sass-cache/
+artifacts/
+bower_components/
+build/
+coverage/
+node_modules/
+release/
+dest
+CONTRIBUTING.md
+HISTORY.md
+LICENSE.md
+/\!!!INTERSETING_IDEAS.txt

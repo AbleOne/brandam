@@ -1,0 +1,68 @@
+/* Submenus should still be display: block; */
+.pure-menu-item .pure-menu-item {
+    display: block;
+}
+
+.pure-menu-children {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.pure-menu-horizontal .pure-menu-children {
+    left: 0;
+    top: auto;
+    width: inherit;
+    
+    /* with overflowed menu items */
+    min-width: 250px;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.pure-menu-horizontal .pure-menu-children.mCustomScrollbar {
+    padding: 10px 5px 10px 0;
+}
+.pure-menu-allow-hover:hover > .pure-menu-children,
+.pure-menu-active > .pure-menu-children {
+    display: block;
+    position: absolute;
+}
+
+/* Vertical Menus - show the dropdown arrow */
+.pure-menu-has-children > .pure-menu-link:after {
+    padding-left: 0.5em;
+    content: "\25B8";
+    font-size: small;
+}
+
+/* Horizontal Menus - show the dropdown arrow */
+.pure-menu-horizontal .pure-menu-has-children > .pure-menu-link:after {
+    content: "\25BE";
+}
+
+
+/* Horizontal Menus - 2 columns */
+.pure-menu-horizontal .pure-menu-children-2col.pure-menu-children {
+    min-width: 535px;  /* + 20px  for scroll */
+}
+
+.pure-menu-children-col-1-2 {
+    float: left;
+    min-width: 250px;
+    /*left: 250px;*/
+}
+
+/*.pure-menu-children-col-1-2:first-child {
+    left: 0;
+}*/
+
+.pure-menu-children-col-1-2 strong {
+    text-transform: uppercase;
+    padding: .5em 1em;
+    display: inline-block;
+}

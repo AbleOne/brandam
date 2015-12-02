@@ -1,0 +1,249 @@
+body {
+    color: #777;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#mainNav,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+    padding-top: 20px;
+}
+    #layout.active {
+        position: relative;
+        left: 200px;
+    }
+        #layout.active #menu {
+            left: 200px;
+            width: 200px;
+        }
+
+        #layout.active .menu-link {
+            left: 200px;
+        }
+/*
+The main navigation `<div>` block.
+*/
+.main-nav{
+    /*padding: 0 2em;
+    max-width: 800px;
+    margin: 0 auto;*/
+}
+    .hor-menu {
+        overflow: visible !important;
+    }
+
+        .hor-menu .pure-menu-list {
+            width: 100%;
+            text-align: center;
+        }
+            .hor-menu .pure-menu-list .pure-menu-item {
+                text-align: left;
+            }
+
+    .hor-menu-top {
+        position: relative;
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+
+    .hor-menu-brand {
+        display: block;
+        text-align: center;
+        position: relative;
+    }
+
+    .hor-menu-toggle {
+        width: 44px;
+        height: 44px;
+        /*display: block;*/
+        position: absolute;
+        top: 3px;
+        right: 0;
+        display: none;
+    }
+
+    .hor-menu-toggle .bar {
+        background-color: gray;
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 100px;
+        position: absolute;
+        top: 22px;
+        right: 12px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .hor-menu-toggle .bar:first-child {
+        -webkit-transform: translateY(-6px);
+        -moz-transform: translateY(-6px);
+        -ms-transform: translateY(-6px);
+        transform: translateY(-6px);
+    }
+
+    .hor-menu-toggle.x .bar {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .hor-menu-toggle.x .bar:first-child {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    @media (max-width: 62em) {
+
+        .hor-menu {
+            display: block;
+        }
+
+        .hor-menu-toggle {
+            display: block;
+            display: none\9;
+        }
+
+        .hor-menu-bottom {
+            position: absolute;
+            width: 100%;
+            border-top: 1px solid #eee;
+            background-color: #808080\9;
+            z-index: 100;
+        }
+
+        .hor-menu-bottom .pure-menu-link {
+            opacity: 1;
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            transform: translateX(0);
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .hor-menu-bottom.hor-menu-tucked .pure-menu-link {
+            -webkit-transform: translateX(-140px);
+            -moz-transform: translateX(-140px);
+            -ms-transform: translateX(-140px);
+            transform: translateX(-140px);
+            opacity: 0;
+            opacity: 1\9;
+        }
+
+        .pure-menu-horizontal.hor-menu-tucked {
+            z-index: -1;
+            top: 45px;
+            position: absolute;
+            overflow: hidden;
+        }
+
+    }
+/*
+The content `<div>` block.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 990px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+     margin: 0 auto;
+     color: #333;
+     text-align: left;
+     /*padding: 4em 2em 0;*/
+     text-align: center;
+     padding: 2em 2em 3em;
+     border-bottom: 1px solid #eee;
+     max-width: 990px;
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #ccc;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+/* --------------------------
+ * Footer Module Styles
+ * --------------------------
+*/
+
+.footer {
+    font-size: 87.5%;
+    border-top: 1px solid #eee;
+    margin-top: 3.4286em;
+    padding: 1.1429em;
+    background: rgb(250, 250, 250);
+}
+
+.legal {
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+
+    padding: 0 2em;
+    max-width: 990px;
+}
+
+    .legal-license {
+        margin: 2em auto .5em;
+        font-size: .798em;
+        padding: 0;
+        text-align: justify;
+    }
+
+        /*.legal-license span{
+            font-size: .7em;
+            text-transform: uppercase; 
+        }*/
+    .legal-links {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .legal-copyright {
+        margin-top: 0;
+        margin-bottom: 0;
+    }

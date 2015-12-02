@@ -1,0 +1,157 @@
+/* ---------------------------------------------------------------------- 
+	BrandAM EVENTS (WHAT'S NEW) STYLES
+---------------------------------------------------------------------- */
+
+
+// EVENTS CONFIG VARS
+$tabs_quantity			   : 13;
+$tabs_min_height 		   : 467px;
+
+$tab_active_width		   : 50%;
+$tab_inactive_width 	   : (100% - $tab_active_width) / ($tabs_quantity - 1);
+
+$tab_active_bg			   : #e6e6e6;
+$tab_inactive_bg 		   : #f5f5f5;
+$tab_inactive_border 	   : #EAEAEA; //#DEDEDE;
+
+.wn-events {
+	position: relative;
+	min-height: $tabs_min_height;
+	background-color: #f5f5f5;
+	overflow: hidden;
+
+	.wn-month {
+		// Normal state
+		-webkit-transition: width 0.8s ease-out, left 0.8s ease-out;
+	    -moz-transition: width 0.8s ease-out, left 0.8s ease-out;
+	    -ms-transition: width 0.8s ease-out, left 0.8s ease-out;
+	    -o-transition: width 0.8s ease-out, left 0.8s ease-out;
+	    transition: width 0.8s ease-out, left 0.8s ease-out;
+
+		position: absolute;
+		height: 100%;
+
+		overflow: hidden;
+		width: $tab_active_width; //$tab_inactive_width; //4.1666%;
+
+		@for $i from 1 through $tabs_quantity {
+		  &:nth-child(#{$i}) {
+		  	left: 0% + $tab_inactive_width * ($i - 1);
+		  }
+		}
+		
+		background: url('../img/events/events.png') no-repeat center;  // https://placeholdit.imgix.net/~text?txtsize=33&bg=e6e6e6&txt=497%C3%97517&w=497&h=517
+ 
+		&:first-child {
+			background: $tab_active_bg !important;
+
+			.wn-month-name {
+				border: 0;
+			}
+		}
+		
+
+		// Active state
+		&.active {
+			// width: $tab_active_width;
+			// background-color: $tab_active_bg;
+
+			@for $i from 1 through $tabs_quantity {
+			  & ~ .wn-month:nth-child(#{$i + 1}) {
+			  	left: $tab_active_width + $tab_inactive_width * ($i - 1);
+			  }
+			}
+		}
+	}
+
+	// ROTATED TO THE LEFT
+	.wn-month-name {
+		-webkit-transform: rotate(-90deg) translateY(100%);
+		-moz-transform:    rotate(-90deg) translateY(100%);
+		-ms-transform:     rotate(-90deg) translateY(100%);
+		-o-transform:      rotate(-90deg) translateY(100%);
+		transform:         rotate(-90deg) translateY(100%);
+
+		-webkit-transform-origin: 0 100%;
+		-moz-transform-origin: 0 100%;
+		-ms-transform-origin: 0 100%;
+		-o-transform-origin: 0 100%;
+  		transform-origin: 0 100%;
+		
+		text-align: right;
+		
+		box-sizing: border-box;
+		position: absolute;
+		bottom: 0px;
+		// left: 0;
+		width: 100%;    		// it's a HEIGHT indeeed
+		min-width: $tabs_min_height;
+		max-width: $tabs_min_height;
+		min-height: $tab_inactive_width * 2;
+
+		padding: 5px 10px;	   // instead of line-height
+		/* line-height: 37px; */
+
+		background-color: $tab_inactive_bg;
+		border-top: 1px solid $tab_inactive_border;
+
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	// ROTATED TO THE RIGHT
+	// .wn-month-name {
+	// 	// transform: rotate(270deg);
+	// 	// transform-origin: 100%;
+	// 	// text-align: right;
+	// 	// position: relative;
+	// 	// background-color: #DDDDDD;
+	// 	// padding: 10px;
+	// 	// border-radius: 5px 5px 0 0;
+	// 	float: right;
+		
+	// 	-moz-transform: rotate(270deg);  		/* FF3.5+ */
+	// 	-o-transform: rotate(270deg);  			/* Opera 10.5 */
+	// 	transform: rotate(-90deg);  			/* Saf3.1+, Chrome */
+		
+	// 	-moz-transform-origin: 100% 100%;
+	// 	-o-transform-origin: 100% 100%;
+	// 	-webkit-transform-origin: 100% 100%;
+
+	// 	line-height: $tab_inactive_width; 		//4.1666%;
+	// 	height: $tab_inactive_width;	 	 	//4.1666%;
+	// }
+}
+
+
+// WHAT'S NEW LIST
+.wn-list {
+	overflow-y: auto;
+	height: 100%;
+	// width: 100%;
+	// position: absolute;
+	
+	.mCustomScrollbar {
+		padding: 1em 7px 1em 1em;
+		height: 100%;
+	}
+
+	dl {
+		margin: 0 0 0 38px;
+	}
+
+	dd {
+		position: relative;
+		margin: 0;
+		padding-left: 80px;
+	}
+
+	.wn-img {
+		width: 60px;
+		height: 60px;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

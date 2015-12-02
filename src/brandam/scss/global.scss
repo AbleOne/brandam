@@ -1,0 +1,43 @@
+/* -- SPECIFIC JDCALENDAR STYLES COLLECTOR ------------------------------------- */
+
+// GLOBAL VARIABLES
+
+// $i: "../img";
+
+$text-color: 				#353535;
+$link-color: 				#1b98f8; 	  // #25BEFB; //#ca432b; //#00a0e3;
+
+$button-text-color: 		#444;
+$button-pressed-text-color: #999;
+
+$label-color: 				#ccc;
+
+$form-focus-color: 			#D27464; 	  // original #129FEA
+
+$icon-color: 			   	$text-color;  // original color #aeaeae;
+
+// SLICK SLIDER
+$bullet-active:          	#000;
+
+
+
+
+// BrandAM HELPERZ
+@import "helper-classes";
+
+// BrandAM BASE
+@import "brandam-base";
+
+// EASY RESPONSIVE TABS
+@import "brandam-tabs";
+
+// BrandAM Events (WN)
+@import "brandam-events";
+
+// BrandAM ITEM PAGE
+@import "brandam-item";
+
+
+// MODERN BrandAM ITEM PAGE
+@import "md-brandam";
+

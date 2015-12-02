@@ -1,0 +1,79 @@
+/* misc default styling */
+
+.pure-menu-separator {
+    background-color: #ccc;
+    height: 1px;
+    margin: .3em 0;
+}
+
+.pure-menu-horizontal .pure-menu-separator {
+    width: 1px;
+    height: 1.3em;
+    margin: 0 .3em ;
+}
+
+.pure-menu-heading {
+    /*text-transform: uppercase;*/
+    color: #565d64;
+}
+
+.pure-menu-link {
+    color: #777;
+    box-sizing: content-box;
+}
+
+.pure-menu-children {
+    /*background-color: #f5f5f5;*/
+    
+    /* TABBED (CLASSIC) MENU */
+    background-color: #F1F1F1;     
+    
+    /* MATERIAL MENU */
+    /*background-color: #FDFDFD;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);*/
+}
+
+.pure-menu-link,
+.pure-menu-disabled,
+.pure-menu-heading {
+    padding: .5em 1em;
+}
+
+.pure-menu-disabled {
+    opacity: .5;
+}
+
+.pure-menu-disabled .pure-menu-link:hover {
+    background-color: transparent;
+}
+
+/* MATERIAL MENU */
+/* 
+.pure-menu-allow-hover:hover,
+.pure-menu-allow-hover:focus {
+    background-color: transparent;
+}
+.pure-menu-allow-hover:hover > .pure-menu-link,
+.pure-menu-allow-hover:focus > .pure-menu-link {
+    color: #25BEFB;
+    background-color: transparent !important;
+}
+/.MATERIAL MENU */
+
+/* TABBED MENU*/
+.pure-menu-allow-hover:hover > .pure-menu-link,
+.pure-menu-allow-hover:focus > .pure-menu-link {
+    color: #1b98f8; /*#25BEFB;*/
+}
+.pure-menu-allow-hover:hover,
+.pure-menu-allow-hover:focus,     /* comment here MD =) */
+.pure-menu-active > .pure-menu-link,
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+    background-color: #F1F1F1; /*#f5f5f5;*/ /*#eee;*/
+}
+
+.pure-menu-selected .pure-menu-link,
+.pure-menu-selected .pure-menu-link:visited {
+    color: #000;
+}

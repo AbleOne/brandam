@@ -1,0 +1,970 @@
+/*
+ * -- BASE STYLES --
+ */
+body.md {
+    color: #333;
+}
+
+
+.md {
+
+    // a {
+    //     text-decoration: none;
+    //     color: $link-color;
+    // }
+
+    .content {
+        max-width: 1240px;
+        line-height: normal;
+    }
+
+
+    /*
+     * -- HELPER STYLES --
+     */
+    .primary-button,
+    .secondary-button {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border-radius: 20px;
+    }
+    .primary-button {
+        color: #fff;
+        background: $link-color;
+        margin: 1em 0;
+    }
+    .secondary-button {
+        background: #fff;
+        border: 1px solid #ddd;
+        color: #666;
+        padding: 0.5em 2em;
+        font-size: 80%;
+    }
+
+    /*
+     * -- LAYOUT STYLES --
+     * This layout consists of three main elements, `#nav-brmd` (navigation bar), `#list-brmd` (Brand list), and `#main-brmd` (Brand content). All 3 elements are within `#layout-brmd`
+     */
+    #layout-brmd, #nav-brmd, #list-brmd, #main-brmd {
+        margin: 0;
+        padding: 0;
+    }
+
+    #layout-brmd {
+        border-top: 1px solid #ddd;
+        // border-bottom: 1px solid #ddd;
+    }
+
+    #nav-brmd {
+        width: 100%;
+        height: 40px;
+        position: relative;
+        // background: rgb(37, 42, 58);
+        text-align: center;
+    }
+    #nav-brmd .nav-menu-button {
+        display: block;
+        top: 0.5em;
+        right: 0.5em;
+        position: absolute;
+    }
+
+    #nav-brmd.active {
+        height: 80%;
+    }
+
+    .nav-inner {
+        display: none;
+    }
+
+    #nav-brmd.active .nav-inner {
+        display: block;
+        padding: 2em 0;
+    }
+
+
+    /*
+     * -- NAV BAR STYLES --
+     */
+    #nav-brmd .pure-menu {
+        background: transparent;
+        border: none;
+        text-align: left;
+    }
+        #nav-brmd .pure-menu-link:hover,
+        #nav-brmd .pure-menu-link:focus {
+            // background: rgb(55, 60, 90);
+        }
+        
+        #nav-brmd .pure-menu-item {
+            width: 100%;
+        }
+
+        #nav-brmd .pure-menu-link {
+            padding: .5em 1em .5em 1.5em;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+        }
+        #nav-brmd .pure-menu-heading {
+            border-bottom: none;
+            font-size:110%;
+            // color: rgb(75, 113, 151);
+        }
+    
+
+    /*
+     * MAIN STYLES --
+     */
+    #list-brmd {
+
+        // mCustomScrollBar
+        &[class*='_mCS'] {
+            // border-right: 0 !important;
+        } 
+
+        .mCSB_inside > .mCSB_container {
+            margin-right: 0;
+        }
+        .mCSB_scrollTools {
+            margin: 9px 0;
+            background: #fff;
+            width: 21px;
+
+            .mCSB_draggerContainer {
+                left: 5px;
+            }
+        }
+    }
+
+
+    /*MAIN STYLES --
+     */
+    #main-brmd {
+        min-height: 520px;
+        padding-bottom: 60px;
+    }
+
+
+
+    /*
+     * -- FOOTER STYLES --
+     */
+    .footer {
+        margin-top: 0;
+        // border: 0;
+
+        .legal {
+            max-width: 1240px;
+        }
+    }
+
+
+
+
+    /*
+     * -- Brand STYLES --
+     */
+    .brand-count {
+        color: rgb(75, 113, 151);
+    }
+
+    .brand-label-personal,
+    .brand-label-work,
+    .brand-label-travel {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        margin-right: 0.5em;
+        border-radius: 3px;
+    }
+    .brand-label-personal {
+        background: #ffc94c;
+    }
+    .brand-label-work {
+        background: #41ccb4;
+    }
+    .brand-label-travel {
+        background: #40c365;
+    }
+
+
+    /* Brand Item Styles */
+    .brand-item {
+        padding: 0.9em 1em;
+        border-top: 1px solid #ddd;
+        border-left: 6px solid transparent;
+
+        &:first-child {
+            border: 0;
+        }
+        
+        .brand-avatar {
+            border-radius: 3px;
+            margin-right: 0.5em;
+        }
+        
+        .brand-name,
+        .brand-subject {
+            margin: 0;
+        }
+        
+        .brand-name {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+
+            color: $text-color;
+
+            &:hover {
+                color: $link-color;
+            }
+        }
+
+        &.selected .brand-name {
+            color: $link-color;
+        }
+
+        &:hover .brand-name  {
+            color: $link-color;
+        }
+        
+        .brand-desc {
+            font-size: 80%;
+            margin: 0.4em 0;
+        }
+    }
+
+    .selected {
+        background: #eee;
+        color: $link-color;
+    }
+
+    .brand-item-unread {
+        font-weight: bold;
+        border-left: 6px solid $link-color;
+    }
+
+    /* Brand Content Styles */
+    .brand-content-header, .brand-content-body, .brand-content-footer {
+        padding: 1em 2em;
+    }
+        .brand-content-header {
+            border-bottom: 1px solid #ddd;
+        }
+
+            .brand-content-title {
+                margin: .5em 0 .4em;
+            }
+            .brand-content-subtitle {
+                font-size: 1em;
+                margin: 0;
+                font-weight: normal;
+            }
+                .brand-content-subtitle span {
+                    color: #999;
+                }
+        .brand-content-controls {
+            margin-top: 2em;
+            text-align: right;
+        }
+            .brand-content-controls .secondary-button {
+                margin-bottom: 0.3em;
+            }
+
+        .brand-avatar {
+            width: 40px;
+            height: 40px;
+        }
+}
+
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 40em) {
+
+    .md {
+
+        /* Move the layout over so we can fit the nav + list in on the left */
+        #layout-brmd {
+            padding-left:500px; /* "left col (nav + list)" width */
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* These are position:fixed; elements that will be in the left 500px of the screen */
+        #nav-brmd, #list-brmd {
+            position: absolute; //fixed;
+            top: 0;
+            bottom: 0;
+            // overflow: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            border-right: 1px solid #ddd;
+        }
+        #nav-brmd {
+            margin-left:-500px; /* "left col (nav + list)" width */
+            width:170px;
+            height: 100%;
+        }
+
+        /* Show the menu items on the larger screen */
+        .nav-inner {
+            display: block;
+            padding: 2em 0;
+        }
+
+        /* Hide the "Menu" button on larger screens */
+        #nav-brmd .nav-menu-button {
+            display: none;
+        }
+
+        #list-brmd {
+            margin-left: -350px;
+            width: 100%;
+            height: 33%;
+        }
+
+        #main-brmd {
+            position: fixed;
+            top: 33%;
+            right: 0;
+            bottom: 0;
+            left: 170px;
+            overflow: auto;
+            width: auto; /* so that it's not 100% */
+        }
+    }
+
+}
+
+
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 60em) {
+
+    .md {
+
+        /* This will take up the entire height, and be a little thinner */
+        #list-brmd {
+            margin-left: -330px;
+            width:330px;
+            height: 100%;
+        }
+
+        /* This will now take up it's own column, so don't need position: fixed; */
+        #main-brmd {
+            position: static;
+            margin: 0;
+            // padding: 0;
+
+            .lead {
+                margin-top: .5em;
+            }
+        }
+    }
+}
+
+
+
+//-----------------------------------------------
+// NHL SKIN
+//-----------------------------------------------
+
+$nhls-color-main:          #dadada;
+$nhls-bg-main:             #313131;
+$nhls-brdr-main:           #464646;
+//tabs
+$nhls-color-tab-active:    #c1c1c1;
+$nhls-color-tab:           #777;
+$nhls-brdr-tab:            #505050;
+//table
+$thead-color:              #8e8e8e;
+$trow-brdr:                #353535;
+
+$nhls-color-sec:           #969696;
+$nhls-bg-sec:              #252525;
+$nhls-brdr-sec:            #333;
+
+
+
+.nhl-skin {
+
+    .pure-button {
+        
+        // PRIMARY BUTTON
+        background: $link-color;
+        border-color: $link-color;
+        color: #fff !important;
+        
+        &.active,
+        &:hover {
+            background: lighten($link-color, 10%);
+            border-color: lighten($link-color, 10%);
+        }
+
+        &.pure-button[disabled],
+        &.pure-button-disabled,
+        &.pure-button-disabled:hover,
+        &.pure-button-disabled:focus,
+        &.pure-button-disabled:active {
+            background: $link-color;
+            border-color: $link-color;
+            opacity: .7;
+        }
+
+        //SECONDARY BUTTON
+        // &.secondary-btn {
+        //     // background: #888;                       // fallback for IE
+        //     background: rgba(0,0,0,.4);
+        //     border: 0;
+        //     padding: .563em 1em;                    // compensating border: 0
+        //     color: #d8d8d8 !important;
+
+        //     &.active {
+        //         // background: #717171;
+        //         background: rgba(0,0,0,.5);
+        //         color: #fff !important;
+
+        //         &:hover {
+        //             // background: #717171;
+        //             background: rgba(0,0,0,.5);                    
+        //         }
+        //     }
+
+        //     &:hover {
+        //         // background: #939393;
+        //         background: rgba(0,0,0,.35);
+        //     }
+        // }
+
+        // WITH ICON
+        .fa {
+            color: inherit !important;
+            // margin-right: 8px;
+            // font-size: 12px;
+            // top: 0;
+            // position: relative;
+        }
+    }
+
+    #layout {
+        padding-top: 0;
+        background: url('../img/NHL_BAMS_WC15_Wallpaper.jpg') no-repeat center 189px; //center 168px for BRAND ITEM
+    } 
+
+    .main-nav {
+        background: $nhls-bg-sec;
+
+        .hor-menu-top {
+            padding-top: 28px;
+            margin: 0 auto;
+            max-width: 1240px;
+            background: url('../img/logo-l.png') no-repeat 50% 50%;
+
+            a {
+                text-indent: -9999px;
+            }
+        }
+    }
+
+    .header {
+        margin: 0 auto 1em;
+        padding: 2em;
+        max-width: none;
+        background: url('../img/NHL_Events_WC15_Header.jpg') center no-repeat;   //https://link.nhl.com/brandassets/assets/brand/167/website/NHL_Events_WC15_Header.jpg
+
+        h1 {
+            color: #eee
+        }
+
+        h1, h2 {
+            display: none;
+        }
+    }
+
+    
+    // SCROLL SKIN
+        #list-brmd, .wn-list {
+             .mCSB_scrollTools {
+                background: $nhls-bg-main;
+            }
+
+            .mCS-dark.mCSB_scrollTools .mCSB_draggerRail{
+                // background-color: rgba(255,255,255,0.15);
+            }
+
+            .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+                background-color: rgba(255,255,255,0.30);
+            }
+
+            .mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+                background-color: rgba(255,255,255,0.55);
+            }
+
+            .mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+            .mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+                background-color: rgba(255,255,255,0.6) !important;
+            }
+        }
+    
+
+    //--------------------------------
+    // CLASSIC SKIN
+    //--------------------------------
+    
+        .main-box {
+            margin-top: 1em;
+            margin-bottom: 5em;
+            
+            display: inline-block;
+            width: 100%;
+
+            box-shadow: 0 4px 16px rgba(0,0,0,.8);
+        }
+
+        
+        .wn-events{
+            
+            .wn-month,
+            .wn-month:first-child {
+                background: $nhls-bg-main !important;
+            }
+            
+            .wn-month-name {
+                background-color: $nhls-bg-sec;
+                border-color: #383838;
+            }
+            
+            .wn-list {
+                background: $nhls-bg-main;
+
+                dt {
+                    margin-bottom: 10px;
+                }
+                
+                .wn-img {
+                    top: 6px;
+                }
+
+                dd p {
+                    color: #b7b7b7;
+                    font-size: 14px;
+                }
+            }
+        }
+            
+
+        .brand-item {
+
+            .brand-item-box {
+                background: $nhls-bg-sec;
+                padding: 0 2em;
+
+                .tabs {
+                    >label {
+                        border-color: transparent;
+                        font-weight: normal;
+                        color: $nhls-color-tab;
+                    }
+                    >input[type=radio]:checked+label {
+                        color: $nhls-color-tab-active;
+                        border-top-color: $link-color;
+                        border-bottom-color: $nhls-brdr-tab;
+                        background: $nhls-bg-main;
+                    }
+
+                    section .tab-content {
+                        border-color: $nhls-brdr-tab;
+                    }
+                }
+
+                .brand-overview {
+
+                }
+
+                .brand-gallery {
+
+                }
+
+                .brand-contacts {
+                    .contacts {
+                        li {
+                            .fa {color: $link-color;}
+
+                            > a {
+                                color: #d2d2d2;
+
+                                &:hover {
+                                    color: $link-color;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .pure-table thead {
+                    color: $thead-color;
+
+                    th {
+                        font-weight: 900;
+                        text-transform: none;
+                    }
+                }
+                .pure-table-horizontal td,
+                .pure-table-horizontal th {
+                    border-color: $trow-brdr;
+                }
+                .pure-table-horizontal td {
+                    color: #d2d2d2;
+                }
+
+                .download-preview {
+                    h2 {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+
+        //--------------------------------
+        // TEAM
+        //--------------------------------    
+        &.team {
+            #layout {
+                background-image: url('../img/teams/team_coyotes_wallpaper_2016.jpg');
+            }
+
+            .header {
+                background-image: url('../img/teams/NHL_ArizonaCoyotes_Header.jpg');
+                box-shadow: 0 8px 21px rgba(0,0,0,.8);
+            }
+
+            .brand-item  .brand-item-box {
+                @media screen and (min-width: 48em) {
+                    .brand-overview .pure-u-md-1-3 li {
+                        color: #d2d2d2;
+
+                        small {
+                            color: $nhls-color-tab;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    
+    //--------------------------------
+    // MODERN (MD) SKIN 
+    //--------------------------------
+    &.md {
+        background: #000;
+    }
+
+    &.md #layout {
+        background-position: center 135px; //115px;
+    }
+
+    &.md .main-nav .hor-menu-top {
+        background-position: 60px 50%;
+    }
+
+    &.md .nav-inner {
+        padding: .8em 0 2em;
+
+        .pure-menu-allow-hover:hover,
+        .pure-menu-allow-hover:focus,
+        .pure-menu-active>.pure-menu-link,
+        .pure-menu-link:hover,
+        .pure-menu-link:focus {
+            background: transparent;
+            color: $link-color !important; // = rgb(27,152,248);
+        }
+    }
+
+    &.md #layout-brmd {
+        background: $nhls-bg-main;
+        box-shadow: 0 4px 16px rgba(0,0,0,.8);
+        border-top: 0;
+
+        * {
+            color: $nhls-color-main;
+        }
+    }
+    
+
+    &.md .brand-item {
+        border-top: 1px solid $nhls-brdr-main;
+
+        &:first-child {
+            border: 0;
+        }
+    }
+
+    &.md #nav-brmd,
+    &.md #list-brmd {
+        border-right: 1px solid $nhls-brdr-main;
+    }
+
+    &.md .selected {
+        background: $link-color;
+    }
+
+    &.md #layout .brand-content {
+        padding: 0;
+
+        .brand-item-box {
+            background: transparent;
+            // margin-bottom: 0;
+
+            .tabs > label {
+                padding: 21px 25px 24px;
+            }
+
+            .tabs >input[type=radio]:checked+label {
+                color: #c1c1c1;
+                border-top-color: transparent;
+                border-bottom-color: $link-color;
+                border-bottom-width: 2px; 
+            }
+
+            .tabs section .tab-content {
+                padding: 0;
+            }
+
+            // tabbed
+            .brand-gallery {
+                &.tabs {
+                    // margin-top: 2em;
+
+                    > label {
+                        padding: .563em 1em;
+
+                        // inherit from PRIMARY BUTTON
+                        background: $link-color;
+                        border-color: $link-color;
+                        color: #fff !important;
+                        
+                        &:hover {
+                            background: lighten($link-color, 10%);
+                            border-color: lighten($link-color, 10%);
+                        }
+                    }
+
+                    input[type=radio]:checked+label {
+                        background: lighten($link-color, 10%);
+                        border-color: lighten($link-color, 10%);
+                    }
+                }
+            }
+
+
+            // download list
+            .download-list {
+                .pure-table-horizontal th,
+                .pure-table-horizontal td {
+                    border-color: $nhls-brdr-main;
+                }
+
+                .pure-form .pure-checkbox {
+                    top: 0px; // -1px
+                }
+
+
+                .download-btn {
+                    color: #fff;
+                    margin-right: 0;
+                }
+
+                .download-preview {
+                    padding-left: 3em;
+                }
+            }
+        }
+    }
+
+    // CONTRASTER
+    &.md.contraster {
+
+        #layout-brmd {
+            background: $nhls-bg-sec;
+
+            .mCSB_scrollTools {
+                background: $nhls-bg-sec;
+            }
+        }
+
+        #main-brmd {
+            background: $nhls-bg-main;
+        }
+
+        &.md #nav-brmd,
+        &.md #list-brmd {
+            border-right: 1px solid #383838; //3E3E3E
+        }
+
+        .brand-item {
+            border-top: 1px solid #313131;
+        }
+
+
+    }
+
+    // alt. layout
+    &.md.alt-layout {
+
+        #layout-brmd {
+            margin-bottom: 0;
+        }
+
+        #main-brmd {
+            padding-bottom: 0;
+        }
+        
+        .brand-content{
+            .brand-item-box {
+                padding: 0;
+                // margin-bottom: 0;
+
+                .tabs section .tab-content,
+                .download-list > .pure-g {
+                    padding: 0 2em;
+                }
+
+                .pure-table td:first-child,
+                .pure-table th:first-child,
+                .pure-table th.first-child,
+                .pure-table td.first-child {
+                    padding-left: 2em;
+                }
+
+                .pure-table td:last-child,
+                .pure-table th:last-child,
+                .pure-table th.last-child,
+                .pure-table td.last-child {
+                    padding-right: 2em;
+                }
+            }
+        }
+    }
+
+    // united GALLERY-DOWNLOAD
+        &.md #layout .brand-content .brand-item-box .gallery-download {
+            .gd-mode-switchers {
+                .pure-button {
+        
+                    // PRIMARY BUTTON
+                    background: lighten($link-color, 10%);
+                    border-color: lighten($link-color, 10%);
+                    color: #fff !important;
+                    
+                    &.active,
+                    &:hover {
+                        background: $link-color;
+                        border-color: $link-color;
+                    }
+                }
+            }
+
+            &.list {
+                .gd-content {
+                    .pure-g > div {
+                        border-color: $nhls-brdr-main;
+                    }
+                }
+
+                small {
+                    top: 0px;
+                    // margin-right: 7px;
+                }
+            }
+
+            &.gal.complex-download-ctrl {
+                .gd-chkbx {
+                    height: auto;
+                    bottom: 28px;
+
+                    &:before {
+                        content: "";
+                        height: 41px;
+                        width: 40px;
+                        background: lighten($link-color, 10%);
+                        display: block;
+                        position: absolute;
+                    }
+
+                    [type=checkbox]+label {
+                        top: 8px;
+                        left: 10px;
+
+                        &:before {
+                            border-color: #dedede;
+                        }
+                    }
+
+                    [type=checkbox]:checked+label:before {
+                        border-top-color: transparent;
+                        border-left-color: transparent;
+                        border-right-color: #fff;
+                        border-bottom-color: #fff;
+                    }
+                }
+
+                .download-btn {
+                    // box-shadow: none;
+                }
+            }
+        }
+
+    
+    // SLICK SLIDER
+        &.md .slick-dots {
+            bottom: 25px;
+            background: transparent;
+
+            li button {
+                color: #777 !important;
+            }
+
+            li.slick-active button {
+                color: $bullet-active !important;
+            }
+        } 
+
+    // FOOTER
+    .footer {
+        margin-top: -16px;
+        border-color: $nhls-brdr-sec;
+        background: $nhls-bg-sec; 
+
+        .legal-license {
+            margin-top: 3.5em;
+            color: $nhls-color-sec;
+        }
+
+        .pure-button.faq {
+            padding: .7em 2em .8em;
+            margin: 1.5em 0;
+            background: transparent;
+            border-color: #A7A7A7;
+
+            * {
+                color: #A7A7A7;
+            }
+        }
+    }
+}
