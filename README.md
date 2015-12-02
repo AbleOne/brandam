@@ -1,22 +1,21 @@
 Brand AM
 ====
 
-**Dev:**
+**Build:**
 
 ```shell
 $ npm install
 $ bower install
-$ grunt watch
-```
-
-**Build:**
-
-```shell
 $ grunt build
 ```
 
+then open index.html and navigate through main menu or `Cogs`-button (recommended) at the top right corner
 
-[Pure]: http://purecss.io/
-[Bower]: http://bower.io/
-[Build Status]: https://travis-ci.org/yahoo/pure
-[customize]: http://purecss.io/customize/
+
+**Dev:**
+
+before dev you should go through steps described above
+
+```shell
+$ grunt watch
+```
