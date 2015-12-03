@@ -46,17 +46,21 @@ var slickOpts = {
 // Unviversal CSS classes toggler for defined DOM els
 // usage: stateSwitcher( elWhichIsClicked, elWhereToggleClass, name_of_class_to_toggle ); 
 function stateSwitcher(elWhichIsClicked, elWhereToggleClass, className) {
-	$(elWhichIsClicked).on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		$(this).toggleClass('active');
-		$(elWhereToggleClass).toggleClass(className);
-		$(window).resize(function() {
-			$('.gallery-download').attr('style','');
-			var current = $('.va-carousel').slick('slickCurrentSlide');
-			$('.va-carousel').slick('slickGoTo',current);
-		}).resize();
-	});
+	if ($(elWhichIsClicked).length) {
+		$(elWhichIsClicked).on('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).toggleClass('active');
+			$(elWhereToggleClass).toggleClass(className);
+			$(window).resize(function() {
+				$('.gallery-download').attr('style','');
+				if ($('.va-carousel').length) {
+					var current = $('.va-carousel').slick('slickCurrentSlide');
+					$('.va-carousel').slick('slickGoTo',current);
+				}
+			}).resize();
+		});
+	}
 }
 
 // Checkboxes behaviour func
@@ -309,11 +313,11 @@ $(document).ready(function() {
 			e.stopPropagation();
 		});
 
-		// $('.style-switcher .nhl-skn').each(function() {
-		// 	if ($('body').hasClass('nhl-skin')) {
-		// 		$(this).addClass('active');
-		// 	}
-		// });
+		if ($('.style-content > .nhl-skn').length) {
+			if ($('body').hasClass('nhl-skin')) {
+				$('.style-content > .nhl-skn').addClass('active');
+			}
+		}
 
 		$(document).on('click', function() {
 			if ($('.style-switcher').hasClass('active')) {
@@ -322,7 +326,7 @@ $(document).ready(function() {
 		});
 
 		stateSwitcher('.nhl-skn','body','nhl-skin');
-
+		stateSwitcher('.alt-layt','body','alt-layout');
 
 
 }); //end $(document).ready()

@@ -1,5 +1,6 @@
 /*
  * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
  */
 body.md {
     color: #333;
@@ -21,6 +22,7 @@ body.md {
 
     /*
      * -- HELPER STYLES --
+     * Over-riding some of the .pure-button styles to make my buttons look unique
      */
     .primary-button,
     .secondary-button {
@@ -56,6 +58,7 @@ body.md {
         // border-bottom: 1px solid #ddd;
     }
 
+    /* Make the navigation 100% width on phones */
     #nav-brmd {
         width: 100%;
         height: 40px;
@@ -63,6 +66,7 @@ body.md {
         // background: rgb(37, 42, 58);
         text-align: center;
     }
+    /* Show the "Menu" button on phones */
     #nav-brmd .nav-menu-button {
         display: block;
         top: 0.5em;
@@ -70,14 +74,16 @@ body.md {
         position: absolute;
     }
 
+    /* When "Menu" is clicked, the navbar should be 80% height */
     #nav-brmd.active {
         height: 80%;
     }
-
+    /* Don't show the navigation items... */
     .nav-inner {
         display: none;
     }
 
+    /* ...until the "Menu" button is clicked */
     #nav-brmd.active .nav-inner {
         display: block;
         padding: 2em 0;
@@ -86,6 +92,7 @@ body.md {
 
     /*
      * -- NAV BAR STYLES --
+     * Styling the default .pure-menu to look a little more unique.
      */
     #nav-brmd .pure-menu {
         background: transparent;
@@ -167,6 +174,7 @@ body.md {
 
     /*
      * -- Brand STYLES --
+     * Styles relevant to the Brand messages, labels, counts, and more.
      */
     .brand-count {
         color: rgb(75, 113, 151);
@@ -675,6 +683,10 @@ $nhls-brdr-sec:            #333;
         background: #000;
     }
 
+    &.md .brand-content-header {
+        border-bottom: 1px solid #464646;
+    }
+
     &.md #layout {
         background-position: center 135px; //115px;
     }
@@ -834,11 +846,33 @@ $nhls-brdr-sec:            #333;
         #main-brmd {
             padding-bottom: 0;
         }
-        
+        .list .gd-content {
+            padding-left: 2em;
+        }
         .brand-content{
             .brand-item-box {
                 padding: 0;
-                // margin-bottom: 0;
+                margin-bottom: 0;
+
+                h2 {
+                    margin-top: 1.3em !important;
+                    margin-bottom: 19px !important;
+                }
+
+                .brand-gallery {
+                    padding: 0;
+
+                    h2 {
+                        margin-left: 32px;
+                    }
+                }
+
+
+
+                .brand-overview,
+                .brand-contacts {
+                    padding: 0 2em;
+                }
 
                 .tabs section .tab-content,
                 .download-list > .pure-g {

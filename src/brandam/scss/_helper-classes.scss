@@ -100,6 +100,7 @@
     right: -350px;
     transition: all .5s ease-out;
     padding: 1.2em 2em;
+    z-index: 500;
 
     &.active {
     	right: 0;
@@ -124,9 +125,17 @@
 	}
 
 	.style-content {
-		.nhl-skn {
+		> .pure-button {
 			margin-bottom: 3em;
+
+			&.active + .pure-button {
+				display: inline-block;
+			} 
 		}
+		> .pure-button + .pure-button {
+			display: none;
+		}
+
 		table {
 			// margin-bottom: 30px;
 			font-size: 80%;
