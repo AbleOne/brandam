@@ -1,6 +1,5 @@
 /*
  * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
  */
 body.md {
     color: #333;
@@ -22,7 +21,6 @@ body.md {
 
     /*
      * -- HELPER STYLES --
-     * Over-riding some of the .pure-button styles to make my buttons look unique
      */
     .primary-button,
     .secondary-button {
@@ -58,7 +56,6 @@ body.md {
         // border-bottom: 1px solid #ddd;
     }
 
-    /* Make the navigation 100% width on phones */
     #nav-brmd {
         width: 100%;
         height: 40px;
@@ -74,11 +71,9 @@ body.md {
         position: absolute;
     }
 
-    /* When "Menu" is clicked, the navbar should be 80% height */
     #nav-brmd.active {
         height: 80%;
     }
-    /* Don't show the navigation items... */
     .nav-inner {
         display: none;
     }
@@ -92,7 +87,6 @@ body.md {
 
     /*
      * -- NAV BAR STYLES --
-     * Styling the default .pure-menu to look a little more unique.
      */
     #nav-brmd .pure-menu {
         background: transparent;
@@ -174,7 +168,6 @@ body.md {
 
     /*
      * -- Brand STYLES --
-     * Styles relevant to the Brand messages, labels, counts, and more.
      */
     .brand-count {
         color: rgb(75, 113, 151);
